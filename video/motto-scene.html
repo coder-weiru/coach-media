@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mock.coach — motto scene</title>
+<style>
+  /* ── mock.coach brand tokens ─────────────────────────────────────────── */
+  :root{
+    --bg:#0f1116; --panel:#181b23; --border:#2a2e3a;
+    --text:#c7ccd6; --text-dim:#8a90a0; --text-strong:#f2f4f8;
+    --violet:#8b5cf6; --blue:#4f74ff; --accent:#6d8cff; --gold:#ffe08a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:#000;overflow:hidden}
+  body{font-family:-apple-system,'Inter','Segoe UI',system-ui,sans-serif}
+
+  /* Fixed 1920×1080 stage, centered + scaled to fit the window (JS). Guarantees a
+     clean 16:9 frame you can screen-record at any window size. */
+  .stage{
+    position:fixed;left:50%;top:50%;width:1920px;height:1080px;
+    background:radial-gradient(120% 120% at 50% 42%, #14172130 0%, var(--bg) 60%, #090a0e 100%);
+    overflow:hidden;transform-origin:center center;cursor:pointer;
+    font-feature-settings:"tnum";
+  }
+
+  /* ── ambient light bloom ─────────────────────────────────────────────── */
+  .glow{
+    position:absolute;left:50%;top:44%;width:1500px;height:1500px;translate:-50% -50%;
+    background:radial-gradient(circle,
+      color-mix(in srgb,var(--violet) 26%,transparent) 0%,
+      color-mix(in srgb,var(--blue) 14%,transparent) 34%, transparent 62%);
+    opacity:0;filter:blur(6px);
+  }
+  .run .glow{animation:bloom 2.2s ease-out both, breathe 7s 2.2s ease-in-out infinite}
+  @keyframes bloom{from{opacity:0;scale:.6}to{opacity:1;scale:1}}
+  @keyframes breathe{0%,100%{opacity:.85;scale:1}50%{opacity:1;scale:1.06}}
+
+  /* ── rising "confidence" bars (每天…自信一点 accumulating) ──────────────── */
+  .bars{
+    position:absolute;left:50%;bottom:0;translate:-50% 0;
+    width:1560px;height:360px;display:flex;align-items:flex-end;justify-content:center;
+    gap:14px;opacity:.5;
+    -webkit-mask-image:linear-gradient(to top, #000 0%, #000 24%, transparent 96%);
+            mask-image:linear-gradient(to top, #000 0%, #000 24%, transparent 96%);
+  }
+  .bar{
+    width:44px;border-radius:8px 8px 0 0;transform-origin:bottom;
+    background:linear-gradient(to top,
+      color-mix(in srgb,var(--violet) 90%, #000 0%),
+      var(--blue));
+    box-shadow:0 0 22px color-mix(in srgb,var(--blue) 45%,transparent);
+    scale:1 0;
+  }
+  .run .bar{animation:grow 1.15s cubic-bezier(.2,.9,.25,1) both;animation-delay:calc(.35s + var(--i)*.055s)}
+  @keyframes grow{0%{scale:1 0}70%{scale:1 1.04}100%{scale:1 1}}
+
+  /* ── brand mark ──────────────────────────────────────────────────────── */
+  .brand{
+    position:absolute;left:50%;top:20%;translate:-50% 0;
+    display:flex;align-items:center;gap:16px;opacity:0;
+  }
+  .brand svg{width:64px;height:64px;filter:drop-shadow(0 6px 20px #4f74ff55)}
+  .brand .word{font-size:40px;font-weight:700;letter-spacing:-.01em;color:var(--text-strong)}
+  .brand .word .dot{background:linear-gradient(90deg,var(--violet),var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .run .brand{animation:fadeUp 1s .9s cubic-bezier(.2,.7,.2,1) both}
+
+  /* ── the motto (hero) ────────────────────────────────────────────────── */
+  .motto{
+    position:absolute;left:50%;top:50%;translate:-50% -50%;width:1560px;text-align:center;
+    font-family:-apple-system,'Inter','Segoe UI',system-ui,sans-serif;
+    font-size:104px;font-weight:700;line-height:1.1;letter-spacing:-.015em;
+  }
+  .motto span{
+    display:inline-block;opacity:0;translate:0 40px;position:relative;
+    background:linear-gradient(180deg,#ffffff 0%, #e8ecff 46%, var(--accent) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 2px 40px rgba(109,140,255,.25);
+  }
+  .run .motto span{animation:rise .9s cubic-bezier(.2,.8,.2,1) both;
+    animation-delay:calc(1.7s + var(--i)*.12s)}
+  @keyframes rise{to{opacity:1;translate:0 0}}
+
+  /* sheen sweep across the motto */
+  .sheen{
+    position:absolute;left:50%;top:50%;translate:-50% -50%;
+    width:1620px;height:320px;pointer-events:none;opacity:0;mix-blend-mode:screen;
+    background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);
+  }
+  .run .sheen{animation:sweep 1.5s 3.15s ease-in-out both}
+  @keyframes sweep{0%{opacity:0;translate:-820px -50%}18%{opacity:1}100%{opacity:0;translate:820px -50%}}
+
+  /* ── eyebrow label above the motto ───────────────────────────────────── */
+  .eyebrow{
+    position:absolute;left:50%;top:30%;translate:-50% 0;opacity:0;text-align:center;
+    color:var(--accent);font-size:30px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;
+  }
+  .run .eyebrow{animation:fadeUp 1s 1.2s cubic-bezier(.2,.7,.2,1) both}
+
+  /* ── sparkles (echo the logo) ────────────────────────────────────────── */
+  .spark{position:absolute;color:var(--gold);opacity:0;filter:drop-shadow(0 0 8px #ffe08a88);
+    font-size:26px;animation:none}
+  .run .spark{animation:twinkle 3.4s ease-in-out infinite;animation-delay:var(--d)}
+  @keyframes twinkle{0%,100%{opacity:0;scale:.4}50%{opacity:.9;scale:1}}
+
+  @keyframes fadeUp{from{opacity:0;translate:-50% 22px}to{opacity:1;translate:-50% 0}}
+
+  /* replay hint */
+  .hint{position:absolute;left:50%;bottom:34px;translate:-50% 0;opacity:0;
+    color:var(--text-dim);font-size:20px;letter-spacing:.06em;pointer-events:none}
+  .run .hint{animation:hintIn .8s 5s ease both}
+  @keyframes hintIn{to{opacity:.55}}
+
+  @media (prefers-reduced-motion: reduce){
+    .run *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+  }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage" title="click to replay">
+    <div class="glow"></div>
+    <div class="bars" id="bars"></div>
+
+    <div class="brand">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="mock.coach">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#4f74ff"/></linearGradient></defs>
+        <rect width="32" height="32" rx="8.5" fill="url(#g)"/>
+        <rect x="5" y="9.5" width="18.5" height="12.5" rx="3.4" fill="#fff"/>
+        <path d="M9.8 21.4h4.4l-3.7 3.2a.5.5 0 0 1-.8-.38z" fill="#fff"/>
+        <circle cx="9.8" cy="15.7" r="1.25" fill="#8b5cf6"/><circle cx="14.2" cy="15.7" r="1.25" fill="#8b5cf6"/>
+        <circle cx="18.6" cy="15.7" r="1.25" fill="#8b5cf6"/>
+        <path d="M25.6 5.2l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z" fill="#ffe08a"/>
+        <path d="M21.5 4l.45 1.1 1.1.45-1.1.45L21.5 7.2l-.45-1.1-1.1-.45 1.1-.45z" fill="#ffe08a"/>
+      </svg>
+      <span class="word">mock<span class="dot">.coach</span></span>
+    </div>
+
+    <div class="eyebrow">OUR MISSION</div>
+    <div class="motto" id="motto"></div>
+    <div class="sheen"></div>
+
+    <div class="hint">click to replay</div>
+  </div>
+
+<script>
+  const MOTTO = 'Every day, a little more confident than the day before.';
+  const BAR_COUNT = 22;
+
+  const mottoEl = document.getElementById('motto');
+  const barsEl  = document.getElementById('bars');
+  const stage   = document.getElementById('stage');
+
+  // per-word spans (a space between them lets the line wrap naturally)
+  MOTTO.split(' ').forEach((word, i) => {
+    const s = document.createElement('span');
+    s.textContent = word;
+    s.style.setProperty('--i', i);
+    mottoEl.appendChild(s);
+    mottoEl.appendChild(document.createTextNode(' '));
+  });
+
+  // rising confidence bars — an overall upward trend with organic variation
+  for (let i = 0; i < BAR_COUNT; i++){
+    const b = document.createElement('div');
+    b.className = 'bar';
+    const trend = 60 + (i / (BAR_COUNT - 1)) * 220;          // steady climb
+    const jitter = Math.sin(i * 1.7) * 22 + Math.sin(i * .6) * 14;
+    b.style.height = Math.max(40, trend + jitter) + 'px';
+    b.style.setProperty('--i', i);
+    barsEl.appendChild(b);
+  }
+
+  // scattered sparkles
+  const sparkPos = [[16,26],[82,22],[24,68],[76,72],[50,14],[10,48],[90,52],[62,30]];
+  sparkPos.forEach(([x,y], i) => {
+    const sp = document.createElement('div');
+    sp.className = 'spark'; sp.textContent = '✦';
+    sp.style.left = x + '%'; sp.style.top = y + '%';
+    sp.style.setProperty('--d', (i * .42) + 's');
+    stage.appendChild(sp);
+  });
+
+  // scale the 1920×1080 stage to fit the window
+  function fit(){
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = `translate(-50%,-50%) scale(${s})`;
+  }
+  window.addEventListener('resize', fit); fit();
+
+  // play / replay
+  function play(){
+    stage.classList.remove('run');
+    void stage.offsetWidth;         // force reflow to restart animations
+    stage.classList.add('run');
+  }
+  stage.addEventListener('click', play);
+  play();
+</script>
+</body>
+</html>
