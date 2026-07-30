@@ -44,15 +44,26 @@ npx playwright install chromium
 # 2) capture the live app (headed — headless crashes on the Simli WebRTC + recording):
 node record.mjs avatar report feedback
 node render-cards.mjs          # motto + growth cards → clips
-python3 generate_music.py      # music bed → audio/music-bed.wav
-bash assemble.sh               # → web/public/demo.{webm,mp4} + demo-poster.jpg
+python3 generate_music.py      # music bed → audio/music-bed.wav (needs numpy + scipy)
+bash generate_narration.sh     # cheerful per-scene voice-over → audio/narr-*.wav (macOS `say`)
+bash assemble.sh               # zoom + slow scroll + narration/music → web/public/demo.{webm,mp4} + poster
 ```
+
+The assembled cut is ~49s on a fixed timeline (motto → avatar Q → answer → evaluation → growth →
+motto). `assemble.sh` **zooms into the centred app card** (crop 1120×630 → 1080p, ~1.7×) on the
+interview and evaluation screens so the dark margins don't dominate, and **slows the evaluation
+scroll** (14s of source stretched to 19s). The motto ranges are mirrored in `DemoVideo.tsx` only as a
+timeline reference — the walkthrough is spoken by the voice-over now, not on-screen captions.
 
 ## Notes
 
-- **Music** is synthesized (I–V–vi–IV in C major). To use a licensed track instead (Uppbeat / Artlist /
-  YouTube Audio Library), drop it in `video/audio/` and point `assemble.sh` at it.
-- **Captions** are not yet baked in; the landing autoplays muted, so short per-beat captions are a good
-  next step.
+- **Music** is synthesized (I–V–vi–IV in C major) and sits low under the voice-over. To use a licensed
+  track instead (Uppbeat / Artlist / YouTube Audio Library), drop it in `video/audio/music-bed.wav`.
+- **Narration** is generated locally with macOS `say` (default voice **Samantha**). For a warmer,
+  less synthetic read, install an Enhanced/Premium system voice (System Settings › Accessibility ›
+  Spoken Content › Manage Voices) and re-run `VOICE="Ava (Premium)" bash generate_narration.sh` before
+  `assemble.sh`. Swap to a cloud TTS by replacing `generate_narration.sh` (keep the `narr-N.wav` names).
+- The landing autoplays **muted** (browser policy); `DemoVideo.tsx` exposes a sound button to un-mute
+  the narration + music, plus play/pause and restart controls in the corner.
 - Producing the video needs the running stack; the committed `web/public/demo.*` assets are the shippable
   output and require no rebuild to serve.
