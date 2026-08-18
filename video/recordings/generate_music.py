@@ -6,7 +6,7 @@ import numpy as np
 from scipy.io import wavfile
 
 SR = 48000
-BPM = 96.0
+BPM = 112.0
 BEAT = 60.0 / BPM            # 0.625s
 BAR = 4 * BEAT               # one chord per bar
 EIGHTH = BEAT / 2
@@ -20,7 +20,7 @@ PROG = [
     ([57, 60, 64], 45),   # Am
     ([53, 57, 60], 41),   # F
 ]
-LOOPS = 5                    # 4 bars * 2.5s = 10s per loop -> ~50s, trimmed later
+LOOPS = 6                    # ~52s; the assembly loops it cleanly to the full cut
 
 def adsr(n, a, d, s, r, sus=0.7):
     env = np.ones(n)
@@ -78,7 +78,7 @@ for loop in range(LOOPS):
         for k, idx in enumerate(pattern):
             f = midi_to_freq(arp_notes[idx] + 12)  # up an octave -> sparkle
             npl = int(EIGHTH * SR * 1.6)
-            add(L, R, pluck(f, npl), pos + int(k * EIGHTH * SR), pan=(0.15 if k % 2 else -0.15), gain=0.11)
+            add(L, R, pluck(f, npl), pos + int(k * EIGHTH * SR), pan=(0.15 if k % 2 else -0.15), gain=0.14)
         pos += nbar
 
 # light reverb: a couple of attenuated, slightly-blurred delays
