@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 node render-growth-journey.mjs
 VOICE="${VOICE:-Ava (Premium)}" bash generate_growth_journey_narration.sh
-PUB=../../web/public
+PUB=../../web/public/mock
 SRC=clips/growth-journey-silent.webm
 MUSIC=../audio/warm-music-bed.wav
 

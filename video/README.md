@@ -1,8 +1,8 @@
 # Landing demo video
 
 Source + tooling for the landing-page hero video consumed by
-[`web/src/components/DemoVideo.tsx`](../web/src/components/DemoVideo.tsx). The rendered, drop-in assets
-live at `web/public/demo.webm` · `demo.mp4` · `demo-poster.jpg` (muted-autoplay + click-to-replay,
+[`web/src/mock/marketing/DemoVideo.tsx`](../web/src/mock/marketing/DemoVideo.tsx). The rendered, drop-in assets
+live at `web/public/mock/demo.webm` · `demo.mp4` · `demo-poster.jpg` (muted-autoplay + click-to-replay,
 already wired into `LandingScreen`).
 
 ## The cut (~44s, product-only)
@@ -26,7 +26,7 @@ Entirely real footage of the live product + two on-brand motion cards, under a m
 | `recordings/record.mjs` | Playwright capture of the live app (avatar interview, report, feedback) |
 | `recordings/render-cards.mjs` | Renders the two HTML cards to clips |
 | `recordings/generate_music.py` | Synthesizes the background music bed (numpy) |
-| `recordings/assemble.sh` | Trims segments + music → `web/public/demo.{webm,mp4}` + poster |
+| `recordings/assemble.sh` | Trims segments + music → `web/public/mock/demo.{webm,mp4}` + poster |
 
 Derived/heavy artifacts (`recordings/clips`, `work`, `frames`, `node_modules`, `audio/`) are gitignored —
 regenerate them with the scripts below.
@@ -46,7 +46,7 @@ node record.mjs avatar report feedback
 node render-cards.mjs          # motto + growth cards → clips
 python3 generate_music.py      # music bed → audio/music-bed.wav (needs numpy + scipy)
 bash generate_narration.sh     # cheerful per-scene voice-over → audio/narr-*.wav (macOS `say`)
-bash assemble.sh               # zoom + slow scroll + narration/music → web/public/demo.{webm,mp4} + poster
+bash assemble.sh               # zoom + slow scroll + narration/music → web/public/mock/demo.{webm,mp4} + poster
 ```
 
 The assembled cut is ~49s on a fixed timeline (motto → avatar Q → answer → evaluation → growth →
@@ -65,5 +65,5 @@ timeline reference — the walkthrough is spoken by the voice-over now, not on-s
   `assemble.sh`. Swap to a cloud TTS by replacing `generate_narration.sh` (keep the `narr-N.wav` names).
 - The landing autoplays **muted** (browser policy); `DemoVideo.tsx` exposes a sound button to un-mute
   the narration + music, plus play/pause and restart controls in the corner.
-- Producing the video needs the running stack; the committed `web/public/demo.*` assets are the shippable
+- Producing the video needs the running stack; the committed `web/public/mock/demo.*` assets are the shippable
   output and require no rebuild to serve.

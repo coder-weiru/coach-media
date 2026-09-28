@@ -5,7 +5,7 @@
 > Kept here for the shot ideas, AI-video prompts, and assembly reference.
 
 
-**Goal.** A ~58-second hero video for the landing page (`web/src/components/DemoVideo.tsx`) that opens
+**Goal.** A ~58-second hero video for the landing page (`web/src/mock/marketing/DemoVideo.tsx`) that opens
 on the mission, walks through the real product (interviewer builds → candidate practices → gets a scored
 report), pays it off with a confident real interview, and closes back on the mission.
 
@@ -29,9 +29,9 @@ report), pays it off with a confident real interview, and closes back on the mis
 | **Real people, not cartoon** | The 3 human scenes come from an **AI text-to-video tool** (Sora / Veo 3 / Runway Gen-3 / Kling). The app scenes are **real screen-recordings** of the running product. |
 
 **Deliverables the code already expects** (drop-in, no code change — see `DemoVideo.tsx` header):
-- `web/public/demo.webm` — primary
-- `web/public/demo.mp4` — Safari/iOS fallback
-- `web/public/demo-poster.jpg` — poster + reduced-motion fallback frame
+- `web/public/mock/demo.webm` — primary
+- `web/public/mock/demo.mp4` — Safari/iOS fallback
+- `web/public/mock/demo-poster.jpg` — poster + reduced-motion fallback frame
 
 ---
 
@@ -200,19 +200,19 @@ Library) — do not use copyrighted tracks.
 
 ```bash
 # primary: VP9 webm (small, modern browsers)
-ffmpeg -i master.mp4 -c:v libvpx-vp9 -b:v 0 -crf 33 -an web/public/demo.webm
+ffmpeg -i master.mp4 -c:v libvpx-vp9 -b:v 0 -crf 33 -an web/public/mock/demo.webm
 
 # fallback: H.264 mp4 (Safari/iOS) — faststart so it streams
 ffmpeg -i master.mp4 -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p \
-  -movflags +faststart -an web/public/demo.mp4
+  -movflags +faststart -an web/public/mock/demo.mp4
 
 # poster: the motto hero frame (grab a strong still, e.g. at 0:03)
-ffmpeg -i master.mp4 -ss 00:00:03 -frames:v 1 -q:v 3 web/public/demo-poster.jpg
+ffmpeg -i master.mp4 -ss 00:00:03 -frames:v 1 -q:v 3 web/public/mock/demo-poster.jpg
 ```
 
 *(`-an` strips audio — the landing plays muted; drop it if you want a soundtrack for the mp4 on social.)*
 
-**Drop in & ship** — put the three files in `web/public/`. `DemoVideo` auto-detects them: it lazy-loads,
+**Drop in & ship** — put the three files in `web/public/mock/`. `DemoVideo` auto-detects them: it lazy-loads,
 muted-autoplays on scroll-into-view, and shows the play/pause toggle for replay. No code change. It falls
 back to the "coming soon" placeholder if a file is missing, so you can ship partials.
 
@@ -225,4 +225,4 @@ back to the "coming soon" placeholder if a file is missing, so you can ship part
 - [ ] Capture 🖥️ Wizard / Practice / Interview loop / Evaluation / Feedback on the live stack
 - [ ] Assemble to 58s, add lower-third captions, cool grade, optional music bed
 - [ ] Export master → encode `demo.webm` / `demo.mp4` / `demo-poster.jpg`
-- [ ] Drop into `web/public/`, verify autoplay + replay on the landing page
+- [ ] Drop into `web/public/mock/`, verify autoplay + replay on the landing page
