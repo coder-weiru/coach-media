@@ -10,7 +10,7 @@ const context = await browser.newContext({
   recordVideo: { dir: out, size: { width: 1920, height: 1080 } },
 });
 const page = await context.newPage();
-await page.goto('file://' + new URL('../growth-journey.html', import.meta.url).pathname);
+await page.goto('file://' + new URL('./growth-journey.html', import.meta.url).pathname);
 await page.waitForTimeout(60_000);
 const video = page.video();
 await context.close();

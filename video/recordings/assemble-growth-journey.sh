@@ -4,9 +4,10 @@ set -euo pipefail
 cd "$(dirname "$0")"
 node render-growth-journey.mjs
 VOICE="${VOICE:-Ava (Premium)}" bash generate_growth_journey_narration.sh
-PUB=../../web/public/mock
+PUB="${OUTPUT_DIR:-../../exports}"
+mkdir -p "$PUB"
 SRC=clips/growth-journey-silent.webm
-MUSIC=../audio/warm-music-bed.wav
+MUSIC=../sets/02-growth-journey-ava/warm-music-bed.wav
 
 # The landing autoplays muted, but the existing sound control can reveal the gentle music bed.
 ffmpeg -y -loglevel error -stream_loop -1 -i "$MUSIC" -t 60 -filter:a 'volume=0.16,afade=t=in:st=0:d=2,afade=t=out:st=56:d=4' -ar 48000 -ac 2 work/growth-music.wav

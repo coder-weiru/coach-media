@@ -1,7 +1,12 @@
+> Extracted into coach-media. Paths under `web/` below refer to the separate
+> Coach repository. Assembly now writes to this repository's `exports/` directory.
+> The original product cut still needs missing capture inputs; see
+> [migration notes](../docs/migration.md). Install Node dependencies at the repo root.
+
 # Landing demo video
 
 Source + tooling for the landing-page hero video consumed by
-[`web/src/mock/marketing/DemoVideo.tsx`](../web/src/mock/marketing/DemoVideo.tsx). The rendered, drop-in assets
+`web/src/mock/marketing/DemoVideo.tsx` in the Coach repository. The rendered, drop-in assets
 live at `web/public/mock/demo.webm` · `demo.mp4` · `demo-poster.jpg` (muted-autoplay + click-to-replay,
 already wired into `LandingScreen`).
 
@@ -37,16 +42,16 @@ Requires the local stack running (`docker compose up`, with a real `OPENAI_API_K
 for realistic questions and the avatar) and ffmpeg.
 
 ```bash
-cd video/recordings
 npm install                    # playwright
 npx playwright install chromium
+cd video/recordings
 # 1) seed camera-ready data + enable the avatar on the hero interview (see session notes)
 # 2) capture the live app (headed — headless crashes on the Simli WebRTC + recording):
 node record.mjs avatar report feedback
 node render-cards.mjs          # motto + growth cards → clips
 python3 generate_music.py      # music bed → audio/music-bed.wav (needs numpy + scipy)
 bash generate_narration.sh     # cheerful per-scene voice-over → audio/narr-*.wav (macOS `say`)
-bash assemble.sh               # zoom + slow scroll + narration/music → web/public/mock/demo.{webm,mp4} + poster
+bash assemble.sh               # zoom + slow scroll + narration/music → ../../exports/demo.{webm,mp4} + poster
 ```
 
 The assembled cut is ~49s on a fixed timeline (motto → avatar Q → answer → evaluation → growth →

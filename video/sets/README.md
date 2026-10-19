@@ -1,7 +1,7 @@
 # Landing video sets
 
-Each folder is a self-contained delivery set. The active landing-page copies remain in
-`web/public/mock/`; the files here are organized production handoffs and safe to review or archive.
+Each folder preserves a delivery set; regeneration dependencies and gaps are documented in [migration notes](../../docs/migration.md). The active landing-page copies remain in
+Coach’s `web/public/mock/`; the files here are organized production handoffs and safe to review or archive.
 
 | Set | Story | Voice | Live asset |
 | --- | --- | --- | --- |

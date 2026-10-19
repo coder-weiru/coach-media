@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store
+exports/
+video/audio/
+video/**/clips/
+video/**/work/
+video/**/frames/
+video/sets/*/audio/
+video/recordings/answer.wav

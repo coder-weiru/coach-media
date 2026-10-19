@@ -60,8 +60,9 @@ echo "muxing video + soundtrack…"
 ffmpeg -y -loglevel error -i "$W/master_silent.mp4" -i "$W/soundtrack.wav" \
   -map 0:v -map 1:a -shortest -c:v copy -c:a aac -b:a 192k "$W/master.mp4"
 
-echo "encoding drop-in assets → web/public/mock/…"
-PUB=../../web/public/mock
+echo "encoding assets → ${OUTPUT_DIR:-../../exports}/…"
+PUB="${OUTPUT_DIR:-../../exports}"
+mkdir -p "$PUB"
 ffmpeg -y -loglevel error -i "$W/master.mp4" -c:v libvpx-vp9 -b:v 0 -crf 33 -c:a libopus -b:a 128k "$PUB/demo.webm"
 ffmpeg -y -loglevel error -i "$W/master.mp4" -c:v libx264 -crf 22 -preset slow -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart "$PUB/demo.mp4"
 ffmpeg -y -loglevel error -ss 2 -i "$W/master.mp4" -frames:v 1 -q:v 3 "$PUB/demo-poster.jpg"

@@ -4,8 +4,8 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 
-const API = 'http://localhost:8000';
-const APP = 'http://localhost:5200';
+const API = process.env.COACH_API_URL || 'http://localhost:8000';
+const APP = process.env.COACH_APP_URL || 'http://localhost:5200';
 const OUT = new URL('./clips/', import.meta.url).pathname;
 const HERO = '3c9805dd-7045-48f7-90b5-766fe05283c0';
 const SESSION = '2c34043c-d000-44a0-a295-3dd0252840aa'; // Alex's strong completed session

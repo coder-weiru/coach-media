@@ -2,7 +2,7 @@
 # Voice-over for the reflection-led Growth Journey landing film.
 set -euo pipefail
 cd "$(dirname "$0")"
-A=../audio
+A=audio
 W=work
 mkdir -p "$A" "$W"
 
