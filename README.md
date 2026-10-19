@@ -30,6 +30,15 @@ Live capture defaults to Coach at ports 8000/5200; override with
 `COACH_API_URL` and `COACH_APP_URL`. Capture creates interview/session data and
 uses real LLM/avatar services; use a disposable development instance.
 
+## Campus/Fable rebuild
+
+```sh
+npm run assemble:campus
+```
+
+Uses the seven preserved Fable MP3s and committed music, with no voice-generation
+service. See [Campus set](video/sets/03-growth-journey-campus-fable/README.md).
+
 ## Delivery to Coach
 
 Review the exports, then copy the chosen MP4, WebM and poster into Coach's
