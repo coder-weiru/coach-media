@@ -1,0 +1,18 @@
+{
+  "name": "coach-media",
+  "version": "1.0.0",
+  "description": "Coach video production sources and delivery sets",
+  "scripts": {
+    "render:cards": "node video/recordings/render-cards.mjs",
+    "render:growth": "node video/recordings/render-growth-journey.mjs",
+    "render:campus": "node video/recordings/render-growth-journey-campus.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  },
+  "private": true
+}
