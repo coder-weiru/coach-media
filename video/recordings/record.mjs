@@ -1,14 +1,13 @@
 // Records true-1080p .webm clips of the live mock.coach app, one per scene, with a
 // visible cursor and human-paced interaction. Usage:  node record.mjs [scene...]
-//   scenes: wizard catalog loop report feedback   (default: all)
+//   scenes: avatar wizard catalog loop report feedback (default: avatar report feedback)
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 
 const API = process.env.COACH_API_URL || 'http://localhost:8000';
 const APP = process.env.COACH_APP_URL || 'http://localhost:5200';
 const OUT = new URL('./clips/', import.meta.url).pathname;
-const HERO = '3c9805dd-7045-48f7-90b5-766fe05283c0';
-const SESSION = '2c34043c-d000-44a0-a295-3dd0252840aa'; // Alex's strong completed session
+const HERO = process.env.COACH_HERO_ID; // Public, free-to-practice interview in the capture instance
 fs.mkdirSync(OUT, { recursive: true });
 
 async function tokenFor(email, name) {
@@ -16,7 +15,10 @@ async function tokenFor(email, name) {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, name }),
   });
-  return (await r.json()).access_token;
+  if (!r.ok) throw new Error(`Dev login failed: HTTP ${r.status}`);
+  const body = await r.json();
+  if (!body.access_token) throw new Error('Dev login returned no access token');
+  return body.access_token;
 }
 
 // A soft, visible cursor that follows real mouse events (Playwright's mouse fires them).
@@ -124,7 +126,9 @@ async function sceneLoop(browser) {
   const { page } = s;
   // enter a fresh practice via the invite flow (start server-side, then open the app on it)
   const r1 = await fetch(`${API}/catalog/${HERO}/practice`, { method: 'POST', headers: { Authorization: 'Bearer ' + cand } });
+  if (!r1.ok) throw new Error(`Practice creation failed: HTTP ${r1.status}; verify COACH_HERO_ID and free/public availability`);
   const { invite_token } = await r1.json();
+  if (!invite_token) throw new Error('Practice creation returned no invite token');
   await page.goto(`${APP}/?invite=${invite_token}`); await page.waitForLoadState('networkidle'); await sleep(2500);
   // the invite screen → start; then answer one question on camera
   const startBtn = page.getByRole('button', { name: /start|practice|begin/i }).first();
@@ -185,7 +189,9 @@ async function sceneAvatar(browser) {
   const s = await newScene(browser, cand, 'avatar');
   const { page } = s;
   const r1 = await fetch(`${API}/catalog/${HERO}/practice`, { method: 'POST', headers: { Authorization: 'Bearer ' + cand } });
+  if (!r1.ok) throw new Error(`Practice creation failed: HTTP ${r1.status}; verify COACH_HERO_ID and free/public availability`);
   const { invite_token } = await r1.json();
+  if (!invite_token) throw new Error('Practice creation returned no invite token');
   await page.goto(`${APP}/?invite=${invite_token}`); await page.waitForLoadState('networkidle'); await sleep(2500);
   await page.screenshot({ path: OUT + '../frames/avatar-invite.png' }).catch(() => {});
   const startBtn = page.getByRole('button', { name: /start interview/i }).first();
@@ -245,10 +251,17 @@ async function sceneAvatar(browser) {
 
 const ALL = { avatar: sceneAvatar, wizard: sceneWizard, catalog: sceneCatalog, loop: sceneLoop, report: sceneReport, feedback: sceneFeedback };
 
-const want = process.argv.slice(2).filter((a) => ALL[a]);
+const want = process.argv.slice(2);
+for (const name of want) {
+  if (!ALL[name]) throw new Error(`Unknown scene: ${name}. Choose from: ${Object.keys(ALL).join(', ')}`);
+}
 const run = want.length ? want : ['avatar', 'report', 'feedback'];
 
-const WAV = new URL('./answer.wav', import.meta.url).pathname;
+if (run.some(name => name === 'avatar' || name === 'loop') && !HERO) {
+  throw new Error('Set COACH_HERO_ID to a public, free-to-practice interview in your development instance.');
+}
+const WAV = process.env.COACH_ANSWER_WAV || new URL('../sets/01-product-demo/sources/answer.wav', import.meta.url).pathname;
+if (run.includes('avatar') && !fs.existsSync(WAV)) throw new Error(`Missing microphone source: ${WAV}`);
 const browser = await chromium.launch({
   // Headed: the real compositor decodes the Simli WebRTC avatar without crashing the renderer,
   // which headless does ~13s into recording. No slowMo (it stalls the WebRTC event loop).
@@ -261,6 +274,6 @@ const browser = await chromium.launch({
     '--disable-gpu',
   ],
 });
-for (const name of run) { try { await ALL[name](browser); } catch (e) { console.error(`  ✗ ${name}:`, e.message); } }
+for (const name of run) { try { await ALL[name](browser); } catch (e) { console.error(`  ✗ ${name}:`, e.message); process.exitCode = 1; } }
 await browser.close();
 console.log('done →', OUT);

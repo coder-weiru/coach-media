@@ -30,6 +30,15 @@ Live capture defaults to Coach at ports 8000/5200; override with
 `COACH_API_URL` and `COACH_APP_URL`. Capture creates interview/session data and
 uses real LLM/avatar services; use a disposable development instance.
 
+## Original product-demo rebuild
+
+```sh
+npm run assemble:demo
+```
+
+Uses recovered footage, narration and music without running Coach. Requires
+ffmpeg/ffprobe and `bc`; see [product-demo sources and capture notes](video/sets/01-product-demo/README.md).
+
 ## Campus/Fable rebuild
 
 ```sh
