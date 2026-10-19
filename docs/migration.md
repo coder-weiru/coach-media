@@ -24,17 +24,30 @@ unchanged. Removal of production sources from Coach is a later migration slice.
 - Original product-demo clips, answer.wav and seed/session instructions are not
   tracked. Existing final delivery assets are preserved; a fresh product render
   requires recapturing and documenting those inputs.
-- Campus delivery includes seven Fable MP3 recordings. Its historical narration
-  script generates Reed speech using macOS say. Running it does not reproduce
-  Fable. No campus assembly script was present in the source import; preserve
-  the supplied final exports until a Fable assembly workflow is implemented.
+- Campus/Fable assembly now uses the seven preserved MP3s and music bed via
+  `npm run assemble:campus`. The historical Reed generator is an optional
+  alternative and is not used by that workflow.
 - Ava regeneration needs macOS Ava (Premium). Capture requires the separate Coach
   stack and configured LLM/Simli services.
 
 ## Verification
 
 Imported delivery media is byte-identical to Coach's tracked files. Shell and
-JavaScript syntax and local HTML artwork references were checked. Full rendering
-and audiovisual review have not run: ffmpeg/ffprobe is unavailable in the current
-environment. Extraction is ready for review; production-source deletion and
-cutover remain pending those checks.
+JavaScript syntax and local HTML artwork references were checked. After installing ffmpeg/ffprobe and Playwright Chromium, all six preserved video
+files and nine audio files decoded without errors. The Ava workflow rebuilt a
+60-second 1080p MP4/WebM and poster; product motion cards and the Campus renderer
+also ran successfully. Full product-demo regeneration still has the reproduction gaps listed above.
+
+Closing-transition correction: scene durations now follow the actual 6/10/10/10/
+10/8/6-second timeline. Chromium checks at 50 ms intervals across all four shared
+and delivery-set HTML sources confirmed that text scenes never overlap. The
+outgoing scene fades out before the next fades in. These HTML animations play
+once through the 60-second film; reload the page to replay. Updated review
+exports are generated locally under `exports/`; preserved delivery-set binaries
+remain the original handoff assets until a reviewed replacement is selected.
+
+Campus/Fable follow-up verification: `npm run assemble:campus` rebuilt both
+60-second 1080p exports from the preserved MP3s, music, HTML and artwork.
+Both formats decoded fully without errors. Narration clips do not overlap;
+the mixed soundtrack peaks at -4.7 dBFS. No macOS narration generator or existing
+final-video audio was used for this rebuild.

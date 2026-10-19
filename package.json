@@ -5,7 +5,8 @@
   "scripts": {
     "render:cards": "node video/recordings/render-cards.mjs",
     "render:growth": "node video/recordings/render-growth-journey.mjs",
-    "render:campus": "node video/recordings/render-growth-journey-campus.mjs"
+    "render:campus": "node video/recordings/render-growth-journey-campus.mjs",
+    "assemble:campus": "bash video/sets/03-growth-journey-campus-fable/assemble-campus-fable.sh"
   },
   "keywords": [],
   "author": "",
