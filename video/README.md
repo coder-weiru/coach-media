@@ -1,6 +1,6 @@
 > Extracted into coach-media. Paths under `web/` below refer to the separate
 > Coach repository. Assembly now writes to this repository's `exports/` directory.
-> The original product cut still needs missing capture inputs; see
+> The product cut can now rebuild from recovered capture inputs; see
 > [migration notes](../docs/migration.md). Install Node dependencies at the repo root.
 
 # Landing demo video
@@ -45,13 +45,13 @@ for realistic questions and the avatar) and ffmpeg.
 npm install                    # playwright
 npx playwright install chromium
 cd video/recordings
-# 1) seed camera-ready data + enable the avatar on the hero interview (see session notes)
+# 1) create a public/free development interview with avatar enabled; see sets/01-product-demo/README.md
 # 2) capture the live app (headed — headless crashes on the Simli WebRTC + recording):
-node record.mjs avatar report feedback
+COACH_HERO_ID=<development-interview-uuid> node record.mjs avatar
 node render-cards.mjs          # motto + growth cards → clips
 python3 generate_music.py      # music bed → audio/music-bed.wav (needs numpy + scipy)
 bash generate_narration.sh     # cheerful per-scene voice-over → audio/narr-*.wav (macOS `say`)
-bash assemble.sh               # zoom + slow scroll + narration/music → ../../exports/demo.{webm,mp4} + poster
+CLIPS_DIR="$PWD/clips" AUDIO_DIR="$PWD/../audio" bash assemble.sh # zoom + slow scroll + narration/music → ../../exports/demo.{webm,mp4} + poster
 ```
 
 The assembled cut is ~49s on a fixed timeline (motto → avatar Q → answer → evaluation → growth →

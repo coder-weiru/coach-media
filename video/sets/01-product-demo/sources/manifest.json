@@ -1,0 +1,78 @@
+{
+  "recovered_on": "2026-10-19",
+  "origin": "Ignored local production inputs in sibling Coach repository; not present in imported Git history.",
+  "files": [
+    {
+      "path": "footage/00-motto-open.webm",
+      "recovered_from": "../Coach/video/recordings/clips/00-motto-open.webm",
+      "sha256": "98e43d16f8902b6b542f47a20484b31f77d8151c330ef5abb9514bfe382c1dbe",
+      "bytes": 974095
+    },
+    {
+      "path": "footage/01-avatar-interview.webm",
+      "recovered_from": "../Coach/video/recordings/clips/01-avatar-interview.webm",
+      "sha256": "6b5fbb5a67fd2eafa617847505ba676862556db82205f84b4a634c65daf5a32a",
+      "bytes": 5297298
+    },
+    {
+      "path": "footage/06-growth.webm",
+      "recovered_from": "../Coach/video/recordings/clips/06-growth.webm",
+      "sha256": "84ca08f420073cbdac4a9a3facf0dca1142e795d8ac91d7c82f5c9f999f11d0c",
+      "bytes": 989369
+    },
+    {
+      "path": "footage/09-motto-close.webm",
+      "recovered_from": "../Coach/video/recordings/clips/09-motto-close.webm",
+      "sha256": "b7d226ef27753a80bbaba6b18a45f05ee51919599292250065ddb6db2888f72c",
+      "bytes": 972550
+    },
+    {
+      "path": "sound/music-bed.wav",
+      "recovered_from": "../Coach/video/audio/music-bed.wav",
+      "sha256": "b9f6ff594e7ded2a8c9afd6e7492809ee1f80e44d569d89bad98d2548611e402",
+      "bytes": 9792044
+    },
+    {
+      "path": "sound/narr-1.wav",
+      "recovered_from": "../Coach/video/audio/narr-1.wav",
+      "sha256": "4290e6b4c94ff334574c24ae98bb99acad3eb4d4cfc17ea89864f9c98e7c6a03",
+      "bytes": 727862
+    },
+    {
+      "path": "sound/narr-2.wav",
+      "recovered_from": "../Coach/video/audio/narr-2.wav",
+      "sha256": "44a7cd16ae98ac653d065664eb359310119b65f3671305b9f420081f97e41a7b",
+      "bytes": 1425966
+    },
+    {
+      "path": "sound/narr-3.wav",
+      "recovered_from": "../Coach/video/audio/narr-3.wav",
+      "sha256": "a3fe03ed212869063eea94f98c39d23e2fb7b34f94a9ecf6ddb2f31dbfaca21f",
+      "bytes": 750674
+    },
+    {
+      "path": "sound/narr-4.wav",
+      "recovered_from": "../Coach/video/audio/narr-4.wav",
+      "sha256": "4982d8713232b1aeb3274b6e245e4f74b7995ad24a891933930121a5937439cf",
+      "bytes": 2866078
+    },
+    {
+      "path": "sound/narr-5.wav",
+      "recovered_from": "../Coach/video/audio/narr-5.wav",
+      "sha256": "6ee9b022978129dcd1c5eadfb2c4d31ccec24975a2aa3e83959e16324be4eb61",
+      "bytes": 969134
+    },
+    {
+      "path": "sound/narr-6.wav",
+      "recovered_from": "../Coach/video/audio/narr-6.wav",
+      "sha256": "6664a6b62274dec17660bb0dd0462173f6ee15f8ed84386a773e5cc2ceffa2c7",
+      "bytes": 603030
+    },
+    {
+      "path": "answer.wav",
+      "recovered_from": "../Coach/video/recordings/answer.wav",
+      "sha256": "d5c057ec33c4f5e2a0a8b627c7d9d1f068bbba8eca67750c513cabc999ce109c",
+      "bytes": 1751794
+    }
+  ]
+}

@@ -6,7 +6,8 @@ Imported tracked `video/` files from Coach at
 `6afc7dd936beb179f5727757b3d84b9da299cf80` on October 19, 2026.
 Git fast-export/fast-import retained four video-related commits, their authors,
 dates and messages; commit IDs changed because unrelated paths were filtered.
-Original `video/` layout is retained. No ignored local files were copied.
+Original `video/` layout is retained. The initial import copied no ignored local
+files; the product-demo follow-up recovered the specific inputs listed below.
 
 Coach's source files, served videos, UI and deployment configuration remain
 unchanged. Removal of production sources from Coach is a later migration slice.
@@ -21,9 +22,12 @@ unchanged. Removal of production sources from Coach is a later migration slice.
 
 ## Reproduction gaps
 
-- Original product-demo clips, answer.wav and seed/session instructions are not
-  tracked. Existing final delivery assets are preserved; a fresh product render
-  requires recapturing and documenting those inputs.
+- Original product-demo footage, answer.wav, narration and music were recovered
+  from Coach's ignored local files into `video/sets/01-product-demo/sources/`.
+  Their manifest records provenance and checksums. `npm run assemble:demo`
+  rebuilds offline. Fresh live capture still requires a development interview
+  and configured Coach services; the old database seed script was not recovered.
+  See the product-demo README for explicit setup and remaining capture limits.
 - Campus/Fable assembly now uses the seven preserved MP3s and music bed via
   `npm run assemble:campus`. The historical Reed generator is an optional
   alternative and is not used by that workflow.
@@ -36,7 +40,8 @@ Imported delivery media is byte-identical to Coach's tracked files. Shell and
 JavaScript syntax and local HTML artwork references were checked. After installing ffmpeg/ffprobe and Playwright Chromium, all six preserved video
 files and nine audio files decoded without errors. The Ava workflow rebuilt a
 60-second 1080p MP4/WebM and poster; product motion cards and the Campus renderer
-also ran successfully. Full product-demo regeneration still has the reproduction gaps listed above.
+also ran successfully. Fresh live product capture remains unverified; offline assembly uses the
+recovered sources and does not require the old database seed.
 
 Closing-transition correction: scene durations now follow the actual 6/10/10/10/
 10/8/6-second timeline. Chromium checks at 50 ms intervals across all four shared
@@ -51,3 +56,10 @@ Campus/Fable follow-up verification: `npm run assemble:campus` rebuilt both
 Both formats decoded fully without errors. Narration clips do not overlap;
 the mixed soundtrack peaks at -4.7 dBFS. No macOS narration generator or existing
 final-video audio was used for this rebuild.
+
+Product-demo recovery verification: all 12 recovered source files match their
+Coach originals byte-for-byte and fully decode. `npm run assemble:demo` rebuilt
+49.8-second exports using preserved footage and sound, without Coach services.
+Fresh capture now requires an explicit development interview ID, defaults to
+the preserved microphone WAV, and reports capture failures with a nonzero exit.
+Existing delivered binaries remain unchanged; new outputs live in `exports/`.

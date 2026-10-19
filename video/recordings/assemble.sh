@@ -11,7 +11,17 @@
 #   s6 motto-close  5.0s   full frame
 set -euo pipefail
 cd "$(dirname "$0")"
-C=clips; A=../audio; W=work; mkdir -p "$W"
+# Default to the recovered, versionable inputs. Absolute overrides support fresh captures.
+C="${CLIPS_DIR:-../sets/01-product-demo/sources/footage}"
+A="${AUDIO_DIR:-../sets/01-product-demo/sources/sound}"
+W=work
+for tool in ffmpeg ffprobe bc; do
+  command -v "$tool" >/dev/null || { echo "Required tool missing: $tool" >&2; exit 1; }
+done
+for input in "$C/00-motto-open.webm" "$C/01-avatar-interview.webm" "$C/06-growth.webm" "$C/09-motto-close.webm" "$A/music-bed.wav" "$A"/narr-{1..6}.wav; do
+  [[ -s "$input" ]] || { echo "Required source missing: $input" >&2; exit 1; }
+done
+mkdir -p "$W"
 
 # Zoom that removes the wasted dark margins around the centred app card: crop a 1120x630 window
 # (16:9) around the card, then scale back up to 1080p (~1.7x). Full-frame scenes skip the crop.

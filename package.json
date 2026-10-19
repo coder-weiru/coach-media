@@ -6,7 +6,8 @@
     "render:cards": "node video/recordings/render-cards.mjs",
     "render:growth": "node video/recordings/render-growth-journey.mjs",
     "render:campus": "node video/recordings/render-growth-journey-campus.mjs",
-    "assemble:campus": "bash video/sets/03-growth-journey-campus-fable/assemble-campus-fable.sh"
+    "assemble:campus": "bash video/sets/03-growth-journey-campus-fable/assemble-campus-fable.sh",
+    "assemble:demo": "bash video/recordings/assemble.sh"
   },
   "keywords": [],
   "author": "",
