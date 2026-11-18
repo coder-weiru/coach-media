@@ -1,0 +1,46 @@
+{
+  "clip": "02-hint-then-study",
+  "title": "Get a hint, then Study this",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "version": 1,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Stuck? Here's how to get help without being given the answer.",
+      "file": "audio/cd71694b97553d24.wav",
+      "duration_ms": 3833
+    },
+    {
+      "id": "hint",
+      "text": "Tap the light bulb for a hint. It points you to a next step.",
+      "file": "audio/efec87d2061667ce.wav",
+      "duration_ms": 3833
+    },
+    {
+      "id": "study",
+      "text": "Not sure how this kind of problem works? Tap Study this.",
+      "file": "audio/dd4b579a1beadcd0.wav",
+      "duration_ms": 4013
+    },
+    {
+      "id": "card",
+      "text": "You get the idea in a few steps, and a worked example with different numbers.",
+      "file": "audio/6d8a0b848dd0ae04.wav",
+      "duration_ms": 4433
+    },
+    {
+      "id": "back",
+      "text": "Then go back to your problem and try it yourself.",
+      "file": "audio/529221ca336e2c43.wav",
+      "duration_ms": 2633
+    },
+    {
+      "id": "finish",
+      "text": "Type your step and check it. The help is there whenever you need it.",
+      "file": "audio/4871a8400f8458fe.wav",
+      "duration_ms": 3893
+    }
+  ],
+  "total_ms": 22638
+}

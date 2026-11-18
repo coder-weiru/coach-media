@@ -66,7 +66,7 @@ Raw screen captures come from coach-scenario-runner's tutorial mode (`python -m 
 `video/help/captures/` with their cues and manifest. Assembly:
 
 ```sh
-npm run assemble:help   # -> exports/help/<clip>-<viewport>.{mp4,webm,vtt,jpg} and <clip>.txt
+npm run assemble:help   # every clip -> exports/help/<clip>-<viewport>.{mp4,webm,vtt,jpg} and <clip>.txt
 ```
 
 It adds a 1 s title card, lays each narration line at its cue, holds the solved frame to the end, normalises loudness

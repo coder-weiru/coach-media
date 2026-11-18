@@ -1,0 +1,14 @@
+{
+  "id": "02-hint-then-study",
+  "title": "Get a hint, then Study this",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    { "id": "intro", "text": "Stuck? Here's how to get help without being given the answer." },
+    { "id": "hint", "text": "Tap the light bulb for a hint. It points you to a next step." },
+    { "id": "study", "text": "Not sure how this kind of problem works? Tap Study this." },
+    { "id": "card", "text": "You get the idea in a few steps, and a worked example with different numbers." },
+    { "id": "back", "text": "Then go back to your problem and try it yourself." },
+    { "id": "finish", "text": "Type your step and check it. The help is there whenever you need it." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "clip": "02-hint-then-study",
+  "viewport": "desktop",
+  "size": {
+    "width": 1280,
+    "height": 800
+  },
+  "coach_revision": "760011576808261d8e7de8e545488260773388c9",
+  "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
+  "skill": "eq.two_step",
+  "difficulty": "gentle",
+  "prompt": "Solve for x: 4x + 5 = 17",
+  "narration_sha256": "060626009ae95dcb19f3d93814de13b83980b28c508421c5aea60ee8f8322148",
+  "captured_at": "2026-11-18T21:32:13Z"
+}
