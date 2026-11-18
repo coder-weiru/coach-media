@@ -1,0 +1,49 @@
+{
+  "clip": "03-make-an-assignment",
+  "trim_start_ms": 181,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Teachers, here's how to give your class a practice set.",
+      "start_ms": 681,
+      "end_ms": 3554
+    },
+    {
+      "id": "new",
+      "text": "Open Assignments and start a new one.",
+      "start_ms": 3954,
+      "end_ms": 6647
+    },
+    {
+      "id": "skills",
+      "text": "Tick the skills you want them to practise.",
+      "start_ms": 7049,
+      "end_ms": 8782
+    },
+    {
+      "id": "preview",
+      "text": "Preview a sample set, with each worked solution.",
+      "start_ms": 9183,
+      "end_ms": 12716
+    },
+    {
+      "id": "save",
+      "text": "Give it a title, and save it as a draft.",
+      "start_ms": 13118,
+      "end_ms": 15631
+    },
+    {
+      "id": "students",
+      "text": "Add your students' names. Each one gets their own link, and needs no account.",
+      "start_ms": 16033,
+      "end_ms": 21186
+    },
+    {
+      "id": "send",
+      "text": "Copy a link to share it with that student, then send the assignment.",
+      "start_ms": 21588,
+      "end_ms": 26141
+    }
+  ],
+  "hold_from_ms": 22860
+}
