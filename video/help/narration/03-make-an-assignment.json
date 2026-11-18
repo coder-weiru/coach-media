@@ -1,0 +1,52 @@
+{
+  "clip": "03-make-an-assignment",
+  "title": "Give your class a practice set",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "version": 1,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Teachers, here's how to give your class a practice set.",
+      "file": "audio/fc74fb55cad4c1e5.wav",
+      "duration_ms": 2873
+    },
+    {
+      "id": "new",
+      "text": "Open Assignments and start a new one.",
+      "file": "audio/31cb36ade77404c5.wav",
+      "duration_ms": 2693
+    },
+    {
+      "id": "skills",
+      "text": "Tick the skills you want them to practise.",
+      "file": "audio/5f8af321aede5a92.wav",
+      "duration_ms": 1733
+    },
+    {
+      "id": "preview",
+      "text": "Preview a sample set, with each worked solution.",
+      "file": "audio/89c338d2f10c1834.wav",
+      "duration_ms": 3533
+    },
+    {
+      "id": "save",
+      "text": "Give it a title, and save it as a draft.",
+      "file": "audio/e7892020bcdbdd7c.wav",
+      "duration_ms": 2513
+    },
+    {
+      "id": "students",
+      "text": "Add your students' names. Each one gets their own link, and needs no account.",
+      "file": "audio/6f2ef6104567e39f.wav",
+      "duration_ms": 5153
+    },
+    {
+      "id": "send",
+      "text": "Copy a link to share it with that student, then send the assignment.",
+      "file": "audio/2041d596329f7d96.wav",
+      "duration_ms": 4553
+    }
+  ],
+  "total_ms": 23051
+}

@@ -1,0 +1,15 @@
+{
+  "id": "03-make-an-assignment",
+  "title": "Give your class a practice set",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    { "id": "intro", "text": "Teachers, here's how to give your class a practice set." },
+    { "id": "new", "text": "Open Assignments and start a new one." },
+    { "id": "skills", "text": "Tick the skills you want them to practise." },
+    { "id": "preview", "text": "Preview a sample set, with each worked solution." },
+    { "id": "save", "text": "Give it a title, and save it as a draft." },
+    { "id": "students", "text": "Add your students' names. Each one gets their own link, and needs no account." },
+    { "id": "send", "text": "Copy a link to share it with that student, then send the assignment." }
+  ]
+}
