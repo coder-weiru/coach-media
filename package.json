@@ -9,7 +9,8 @@
     "assemble:campus": "bash video/sets/03-growth-journey-campus-fable/assemble-campus-fable.sh",
     "assemble:demo": "bash video/recordings/assemble.sh",
     "narrate:help": "node video/help/narrate.mjs video/help/clips/*.json",
-    "test:help": "node --test video/help"
+    "test:help": "node --test video/help",
+    "assemble:help": "node video/help/assemble.mjs 01-type-an-answer"
   },
   "keywords": [],
   "author": "",
