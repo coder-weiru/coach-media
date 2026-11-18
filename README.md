@@ -48,6 +48,19 @@ npm run assemble:campus
 Uses the seven preserved Fable MP3s and committed music, with no voice-generation
 service. See [Campus set](video/sets/03-growth-journey-campus-fable/README.md).
 
+## solve.coach help videos
+
+Short narrated how-to clips for solve.coach's `/help` page (design and decisions in Coach:
+`docs/design/help-videos-design.md`). Narration is made first, so the capture can be paced to it:
+
+```sh
+npm run narrate:help   # lines -> video/help/audio, durations -> video/help/narration/<clip>.json
+npm run test:help      # no network
+```
+
+Google Cloud Text-to-Speech (Chirp 3 HD, Ms. Ari, rate 0.95), billed to `solve-510201` with your own `gcloud`
+login (`TTS_PROJECT` overrides). Unchanged lines are never re-made. Plan: [HV1](docs/help-videos/hv1-narration-plan.md).
+
 ## Delivery to Coach
 
 Review the exports, then copy the chosen MP4, WebM and poster into Coach's

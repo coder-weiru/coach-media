@@ -1,0 +1,52 @@
+{
+  "clip": "01-type-an-answer",
+  "title": "Type a math answer",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "version": 1,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Here's how to answer a problem, one step at a time.",
+      "file": "audio/46d512a0d52aa26b.wav",
+      "duration_ms": 2633
+    },
+    {
+      "id": "first-step",
+      "text": "Type your first step in the box, the way you'd write it on paper.",
+      "file": "audio/a7d1e589a0d3e8ba.wav",
+      "duration_ms": 3833
+    },
+    {
+      "id": "check",
+      "text": "Press Enter, or tap the check mark, to check it.",
+      "file": "audio/3ab9667337b6bd5c.wav",
+      "duration_ms": 2813
+    },
+    {
+      "id": "note",
+      "text": "Each step gets a note: it's right, or what to look at again.",
+      "file": "audio/6967296fa465ca84.wav",
+      "duration_ms": 4553
+    },
+    {
+      "id": "keys",
+      "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone.",
+      "file": "audio/8e4836bf547e1723.wav",
+      "duration_ms": 5993
+    },
+    {
+      "id": "fraction",
+      "text": "For a fraction, use a slash, like three slash four.",
+      "file": "audio/98c16435035849ec.wav",
+      "duration_ms": 4133
+    },
+    {
+      "id": "finish",
+      "text": "When a line is the answer, the problem is done. You can finish on any line.",
+      "file": "audio/02e8f2f08115a252.wav",
+      "duration_ms": 5093
+    }
+  ],
+  "total_ms": 29051
+}
