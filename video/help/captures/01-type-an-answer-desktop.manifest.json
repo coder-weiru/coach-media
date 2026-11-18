@@ -9,7 +9,7 @@
   "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
   "skill": "quad.square_roots",
   "difficulty": "standard",
-  "prompt": "Solve by taking square roots: x\u00b2 - 7 = 18",
+  "prompt": "Solve by taking square roots: 4x\u00b2 = 36",
   "narration_sha256": "9afffc339ccf7f0b22462a9981ee8cfdef2f0e6849d87068cd402d805f2a3909",
-  "captured_at": "2026-11-18T13:22:31Z"
+  "captured_at": "2026-11-18T14:10:00Z"
 }

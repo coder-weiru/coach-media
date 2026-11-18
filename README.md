@@ -63,7 +63,15 @@ login (`TTS_PROJECT` overrides). Unchanged lines are never re-made. Plan: [HV1](
 
 Raw screen captures come from coach-scenario-runner's tutorial mode (`python -m app.adapters.solve.tutorial`, its
 `docs/plans/solve/help-tutorials.md`) on an owned disposable target, paced to the narration; they're kept in
-`video/help/captures/` with their cues and manifest for assembly (HV3a).
+`video/help/captures/` with their cues and manifest. Assembly:
+
+```sh
+npm run assemble:help   # -> exports/help/<clip>-<viewport>.{mp4,webm,vtt,jpg} and <clip>.txt
+```
+
+It adds a 1 s title card, lays each narration line at its cue, holds the solved frame to the end, normalises loudness
+once (−16 LUFS) and checks the size budget. Plan: [HV3a](docs/help-videos/hv3a-assembly-plan.md). Chosen exports go to
+Coach's `web/public/solve/help/` in a Coach PR.
 
 ## Delivery to Coach
 

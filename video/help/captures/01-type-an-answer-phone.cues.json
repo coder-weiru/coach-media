@@ -11,32 +11,33 @@
     {
       "id": "first-step",
       "text": "Type your first step in the box, the way you'd write it on paper.",
-      "start_ms": 3729,
-      "end_ms": 7562
+      "start_ms": 3728,
+      "end_ms": 7561
     },
     {
       "id": "keys",
       "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone.",
-      "start_ms": 7964,
-      "end_ms": 13957
+      "start_ms": 7963,
+      "end_ms": 13956
     },
     {
       "id": "check",
       "text": "Press Enter, or tap the check mark, to check it.",
-      "start_ms": 14359,
-      "end_ms": 17172
+      "start_ms": 14358,
+      "end_ms": 17171
     },
     {
       "id": "note",
       "text": "Each step gets a note: it's right, or what to look at again.",
-      "start_ms": 17574,
-      "end_ms": 22127
+      "start_ms": 17573,
+      "end_ms": 22126
     },
     {
       "id": "finish",
       "text": "When a line is the answer, the problem is done. You can finish on any line.",
-      "start_ms": 22528,
-      "end_ms": 27621
+      "start_ms": 22526,
+      "end_ms": 27619
     }
-  ]
+  ],
+  "hold_from_ms": 24995
 }
