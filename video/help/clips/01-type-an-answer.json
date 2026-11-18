@@ -1,0 +1,32 @@
+{
+  "id": "01-type-an-answer",
+  "title": "Type a math answer",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Here's how to answer a problem, one step at a time."
+    },
+    {
+      "id": "first-step",
+      "text": "Type your first step in the box, the way you'd write it on paper."
+    },
+    {
+      "id": "keys",
+      "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone."
+    },
+    {
+      "id": "check",
+      "text": "Press Enter, or tap the check mark, to check it."
+    },
+    {
+      "id": "note",
+      "text": "Each step gets a note: it's right, or what to look at again."
+    },
+    {
+      "id": "finish",
+      "text": "When a line is the answer, the problem is done. You can finish on any line."
+    }
+  ]
+}

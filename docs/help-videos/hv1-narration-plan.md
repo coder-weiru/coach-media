@@ -35,7 +35,7 @@ come and **HV3a normalises the whole narration track once**, at assembly.
 ## Clip 1 lines
 
 Draft wording, checked against the app's practice screen (the step box, Enter or ✓ to check, a note on each step,
-the math keys under the box, a correct answer finishing on any line). HV2 picks the problem; if the problem changes
+the math keys under the box, a correct answer finishing on any line). HV2 picks the problem (2026-11-18: a square-root equation, so the keys show; the fraction line was dropped). If the problem changes
 what a line should say, the line changes and is re-made.
 
 ## Done when

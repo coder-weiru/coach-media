@@ -1,0 +1,42 @@
+{
+  "clip": "01-type-an-answer",
+  "trim_start_ms": 194,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Here's how to answer a problem, one step at a time.",
+      "start_ms": 694,
+      "end_ms": 3327
+    },
+    {
+      "id": "first-step",
+      "text": "Type your first step in the box, the way you'd write it on paper.",
+      "start_ms": 3729,
+      "end_ms": 7562
+    },
+    {
+      "id": "keys",
+      "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone.",
+      "start_ms": 7964,
+      "end_ms": 13957
+    },
+    {
+      "id": "check",
+      "text": "Press Enter, or tap the check mark, to check it.",
+      "start_ms": 14359,
+      "end_ms": 17172
+    },
+    {
+      "id": "note",
+      "text": "Each step gets a note: it's right, or what to look at again.",
+      "start_ms": 17574,
+      "end_ms": 22127
+    },
+    {
+      "id": "finish",
+      "text": "When a line is the answer, the problem is done. You can finish on any line.",
+      "start_ms": 22528,
+      "end_ms": 27621
+    }
+  ]
+}

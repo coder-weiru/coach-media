@@ -7,6 +7,7 @@ __pycache__/
 exports/
 video/audio/
 video/**/clips/
+!video/help/clips/
 video/**/work/
 video/**/frames/
 video/sets/*/audio/

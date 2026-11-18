@@ -61,6 +61,10 @@ npm run test:help      # no network
 Google Cloud Text-to-Speech (Chirp 3 HD, Ms. Ari, rate 0.95), billed to `solve-510201` with your own `gcloud`
 login (`TTS_PROJECT` overrides). Unchanged lines are never re-made. Plan: [HV1](docs/help-videos/hv1-narration-plan.md).
 
+Raw screen captures come from coach-scenario-runner's tutorial mode (`python -m app.adapters.solve.tutorial`, its
+`docs/plans/solve/help-tutorials.md`) on an owned disposable target, paced to the narration; they're kept in
+`video/help/captures/` with their cues and manifest for assembly (HV3a).
+
 ## Delivery to Coach
 
 Review the exports, then copy the chosen MP4, WebM and poster into Coach's
