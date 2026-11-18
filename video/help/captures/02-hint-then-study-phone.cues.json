@@ -1,0 +1,43 @@
+{
+  "clip": "02-hint-then-study",
+  "trim_start_ms": 211,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Stuck? Here's how to get help without being given the answer.",
+      "start_ms": 711,
+      "end_ms": 4544
+    },
+    {
+      "id": "hint",
+      "text": "Tap the light bulb for a hint. It points you to a next step.",
+      "start_ms": 4946,
+      "end_ms": 8779
+    },
+    {
+      "id": "study",
+      "text": "Not sure how this kind of problem works? Tap Study this.",
+      "start_ms": 9180,
+      "end_ms": 13193
+    },
+    {
+      "id": "card",
+      "text": "You get the idea in a few steps, and a worked example with different numbers.",
+      "start_ms": 13594,
+      "end_ms": 18027
+    },
+    {
+      "id": "back",
+      "text": "Then go back to your problem and try it yourself.",
+      "start_ms": 18429,
+      "end_ms": 21062
+    },
+    {
+      "id": "finish",
+      "text": "Type your step and check it. The help is there whenever you need it.",
+      "start_ms": 21464,
+      "end_ms": 25357
+    }
+  ],
+  "hold_from_ms": 24423
+}
