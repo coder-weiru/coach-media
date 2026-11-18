@@ -18,6 +18,12 @@
       "duration_ms": 3833
     },
     {
+      "id": "keys",
+      "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone.",
+      "file": "audio/8e4836bf547e1723.wav",
+      "duration_ms": 5993
+    },
+    {
       "id": "check",
       "text": "Press Enter, or tap the check mark, to check it.",
       "file": "audio/3ab9667337b6bd5c.wav",
@@ -30,23 +36,11 @@
       "duration_ms": 4553
     },
     {
-      "id": "keys",
-      "text": "The keys under the box type powers, roots and brackets for you. Handy on a phone.",
-      "file": "audio/8e4836bf547e1723.wav",
-      "duration_ms": 5993
-    },
-    {
-      "id": "fraction",
-      "text": "For a fraction, use a slash, like three slash four.",
-      "file": "audio/98c16435035849ec.wav",
-      "duration_ms": 4133
-    },
-    {
       "id": "finish",
       "text": "When a line is the answer, the problem is done. You can finish on any line.",
       "file": "audio/02e8f2f08115a252.wav",
       "duration_ms": 5093
     }
   ],
-  "total_ms": 29051
+  "total_ms": 24918
 }

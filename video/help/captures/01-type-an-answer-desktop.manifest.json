@@ -1,0 +1,15 @@
+{
+  "clip": "01-type-an-answer",
+  "viewport": "desktop",
+  "size": {
+    "width": 1280,
+    "height": 800
+  },
+  "coach_revision": "649c866449d4bf87aa0a436a1d26a2b4c27a174a",
+  "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
+  "skill": "quad.square_roots",
+  "difficulty": "standard",
+  "prompt": "Solve by taking square roots: x\u00b2 - 7 = 18",
+  "narration_sha256": "9afffc339ccf7f0b22462a9981ee8cfdef2f0e6849d87068cd402d805f2a3909",
+  "captured_at": "2026-11-18T13:22:31Z"
+}
