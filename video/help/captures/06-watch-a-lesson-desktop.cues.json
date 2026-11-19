@@ -1,0 +1,50 @@
+{
+  "clip": "06-watch-a-lesson",
+  "trim_start_ms": 410,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Tried a problem and still can't see the way? You can watch it solved.",
+      "start_ms": 910,
+      "end_ms": 5463
+    },
+    {
+      "id": "watch",
+      "text": "Tap the play button at the end of your step.",
+      "start_ms": 5864,
+      "end_ms": 8017
+    },
+    {
+      "id": "confirm",
+      "text": "Choose Watch. This problem won't count as solved, so it's worth one more try first.",
+      "start_ms": 8419,
+      "end_ms": 13572
+    },
+    {
+      "id": "lesson",
+      "text": "The lesson talks you through each step. Turn on captions to read along.",
+      "start_ms": 13974,
+      "end_ms": 19547
+    },
+    {
+      "id": "chapters",
+      "text": "Tap a step to go back to it, or change the speed.",
+      "start_ms": 19948,
+      "end_ms": 22821
+    },
+    {
+      "id": "written",
+      "text": "Rather read it? Written steps shows the same solution.",
+      "start_ms": 23223,
+      "end_ms": 27056
+    },
+    {
+      "id": "next",
+      "text": "When you're ready, go on to the next problem and try one yourself.",
+      "start_ms": 27456,
+      "end_ms": 30629
+    }
+  ],
+  "hold_from_ms": 28269,
+  "poster_ms": 15700
+}

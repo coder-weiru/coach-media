@@ -1,0 +1,52 @@
+{
+  "clip": "06-watch-a-lesson",
+  "title": "Watch the solution as a lesson",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "version": 1,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Tried a problem and still can't see the way? You can watch it solved.",
+      "file": "audio/9086e5b657feeb74.wav",
+      "duration_ms": 4553
+    },
+    {
+      "id": "watch",
+      "text": "Tap the play button at the end of your step.",
+      "file": "audio/8d2a91ddff5a5f58.wav",
+      "duration_ms": 2153
+    },
+    {
+      "id": "confirm",
+      "text": "Choose Watch. This problem won't count as solved, so it's worth one more try first.",
+      "file": "audio/727ef4c0e455284e.wav",
+      "duration_ms": 5153
+    },
+    {
+      "id": "lesson",
+      "text": "The lesson talks you through each step. Turn on captions to read along.",
+      "file": "audio/6772e9f4940f6c7d.wav",
+      "duration_ms": 5573
+    },
+    {
+      "id": "chapters",
+      "text": "Tap a step to go back to it, or change the speed.",
+      "file": "audio/be68ab9eb0ba264f.wav",
+      "duration_ms": 2873
+    },
+    {
+      "id": "written",
+      "text": "Rather read it? Written steps shows the same solution.",
+      "file": "audio/ad027df2dffa5c71.wav",
+      "duration_ms": 3833
+    },
+    {
+      "id": "next",
+      "text": "When you're ready, go on to the next problem and try one yourself.",
+      "file": "audio/c84ae2609fee7c5b.wav",
+      "duration_ms": 3173
+    }
+  ],
+  "total_ms": 27311
+}

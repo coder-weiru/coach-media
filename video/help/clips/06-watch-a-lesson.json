@@ -1,0 +1,15 @@
+{
+  "id": "06-watch-a-lesson",
+  "title": "Watch the solution as a lesson",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    { "id": "intro", "text": "Tried a problem and still can't see the way? You can watch it solved." },
+    { "id": "watch", "text": "Tap the play button at the end of your step." },
+    { "id": "confirm", "text": "Choose Watch. This problem won't count as solved, so it's worth one more try first." },
+    { "id": "lesson", "text": "The lesson talks you through each step. Turn on captions to read along." },
+    { "id": "chapters", "text": "Tap a step to go back to it, or change the speed." },
+    { "id": "written", "text": "Rather read it? Written steps shows the same solution." },
+    { "id": "next", "text": "When you're ready, go on to the next problem and try one yourself." }
+  ]
+}
