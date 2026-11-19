@@ -1,0 +1,37 @@
+{
+  "clip": "05-construction",
+  "trim_start_ms": 191,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Here's how to construct with a compass and a straightedge.",
+      "start_ms": 691,
+      "end_ms": 3504
+    },
+    {
+      "id": "compass",
+      "text": "Pick the compass. Tap the centre, then a point the circle goes through.",
+      "start_ms": 3905,
+      "end_ms": 8038
+    },
+    {
+      "id": "again",
+      "text": "Draw a second circle the same way.",
+      "start_ms": 8439,
+      "end_ms": 10772
+    },
+    {
+      "id": "straightedge",
+      "text": "Pick the straightedge, and tap two points. Taps snap to points and crossings.",
+      "start_ms": 11172,
+      "end_ms": 16325
+    },
+    {
+      "id": "check",
+      "text": "Check your construction. Each step is listed, so you can undo any of them.",
+      "start_ms": 16726,
+      "end_ms": 23019
+    }
+  ],
+  "hold_from_ms": 17747
+}

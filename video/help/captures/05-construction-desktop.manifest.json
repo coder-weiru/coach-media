@@ -1,0 +1,15 @@
+{
+  "clip": "05-construction",
+  "viewport": "desktop",
+  "size": {
+    "width": 1280,
+    "height": 800
+  },
+  "coach_revision": "760011576808261d8e7de8e545488260773388c9",
+  "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
+  "skill": "con.bisect",
+  "difficulty": "gentle",
+  "prompt": "Construct the perpendicular bisector of TS.",
+  "narration_sha256": "e2984c1174e5e15b4ee60b7dfdd270ab281c713d1996ad808c65802d488b8d6a",
+  "captured_at": "2026-11-19T01:20:57Z"
+}
