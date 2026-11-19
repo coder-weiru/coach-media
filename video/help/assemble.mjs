@@ -37,9 +37,11 @@ export function timeline({ cues, narration, videoMs, titleMs = TITLE_MS, holdMs 
     return { id: c.id, text: line.text, file: line.file, at, end: at + line.duration_ms };
   });
   const totalMs = titleMs + finalMs - trim;
+  // `poster_ms` (clip 6): a frame the capture marked as the poster, when the held end frame isn't the clip's subject
+  const marked = cues.poster_ms != null && cues.poster_ms > trim && cues.poster_ms < endMs ? titleMs + cues.poster_ms - trim : null;
   return { trimMs: trim, endMs, titleMs, totalMs, freezeMs: finalMs - endMs, placed,
-    posterMs: holdFrom == null ? Math.max(titleMs, placed[placed.length - 2]?.end ?? titleMs)
-      : titleMs + endMs - trim - 40 };
+    posterMs: marked ?? (holdFrom == null ? Math.max(titleMs, placed[placed.length - 2]?.end ?? titleMs)
+      : titleMs + endMs - trim - 40) };
 }
 
 const stamp = (ms) => {

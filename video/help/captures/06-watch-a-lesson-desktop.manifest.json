@@ -1,0 +1,15 @@
+{
+  "clip": "06-watch-a-lesson",
+  "viewport": "desktop",
+  "size": {
+    "width": 1280,
+    "height": 800
+  },
+  "coach_revision": "617887774947cf4afa17c03bb77659891663ecdd",
+  "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
+  "skill": "eq.two_step",
+  "difficulty": "gentle",
+  "prompt": "Solve for x: 5x + 4 = 14",
+  "narration_sha256": "93cde4deb7f66614cc57ffee5a442d276ae67aeff13a2e6c5909fff05d9b0aca",
+  "captured_at": "2026-11-19T04:33:51Z"
+}

@@ -69,3 +69,9 @@ test('with a hold, the capture stops there and the frame is held until the narra
   assert.equal(tl.posterMs, 1000 + 4200 - 400 - 40);
   assert.match(filterGraph(tl, { width: 390, height: 844 }), /tpad=stop_mode=clone:stop_duration=2\.100\[cap\]/);
 });
+
+test('a poster frame the capture marked wins over the held end frame, if it is inside the clip', () => {
+  const at = (poster_ms) => timeline({ cues: { ...cues, hold_from_ms: 4200, poster_ms }, narration, videoMs: 10000 }).posterMs;
+  assert.equal(at(3000), 1000 + 3000 - 400);
+  assert.equal(at(9000), 1000 + 4200 - 400 - 40); // after the hold: ignored
+});
