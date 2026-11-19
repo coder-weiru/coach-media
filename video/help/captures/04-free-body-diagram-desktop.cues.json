@@ -1,0 +1,43 @@
+{
+  "clip": "04-free-body-diagram",
+  "trim_start_ms": 319,
+  "cues": [
+    {
+      "id": "intro",
+      "text": "Here's how to draw the forces on an object.",
+      "start_ms": 819,
+      "end_ms": 2732
+    },
+    {
+      "id": "add",
+      "text": "Tap Add force, and pick which force it is.",
+      "start_ms": 3134,
+      "end_ms": 6607
+    },
+    {
+      "id": "direction",
+      "text": "If it asks, say what exerts it. Then choose which way it points.",
+      "start_ms": 7007,
+      "end_ms": 11740
+    },
+    {
+      "id": "more",
+      "text": "Add each force on the object. Each one shows up as an arrow.",
+      "start_ms": 12142,
+      "end_ms": 16695
+    },
+    {
+      "id": "check",
+      "text": "Check your diagram. If a force is missing, you'll be told what to look at.",
+      "start_ms": 17097,
+      "end_ms": 21950
+    },
+    {
+      "id": "fix",
+      "text": "Add what's missing, and check again.",
+      "start_ms": 22352,
+      "end_ms": 24925
+    }
+  ],
+  "hold_from_ms": 24404
+}

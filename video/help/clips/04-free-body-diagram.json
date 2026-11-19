@@ -1,0 +1,14 @@
+{
+  "id": "04-free-body-diagram",
+  "title": "Draw a free-body diagram",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    { "id": "intro", "text": "Here's how to draw the forces on an object." },
+    { "id": "add", "text": "Tap Add force, and pick which force it is." },
+    { "id": "direction", "text": "If it asks, say what exerts it. Then choose which way it points." },
+    { "id": "more", "text": "Add each force on the object. Each one shows up as an arrow." },
+    { "id": "check", "text": "Check your diagram. If a force is missing, you'll be told what to look at." },
+    { "id": "fix", "text": "Add what's missing, and check again." }
+  ]
+}

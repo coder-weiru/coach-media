@@ -1,0 +1,15 @@
+{
+  "clip": "04-free-body-diagram",
+  "viewport": "phone",
+  "size": {
+    "width": 390,
+    "height": 844
+  },
+  "coach_revision": "760011576808261d8e7de8e545488260773388c9",
+  "tutor_revision": "3509c05c3f7b235fe218173de2dd39cc0ebafa49",
+  "skill": "fbd.draw",
+  "difficulty": "gentle",
+  "prompt": "A chest rests on a floor. Draw the forces on the chest.",
+  "narration_sha256": "2e4e8a97d9fa1c48f99a5b8b18a5150513c62889645b27566e47ef3088677a90",
+  "captured_at": "2026-11-19T00:12:13Z"
+}

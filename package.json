@@ -10,7 +10,7 @@
     "assemble:demo": "bash video/recordings/assemble.sh",
     "narrate:help": "node video/help/narrate.mjs video/help/clips/*.json",
     "test:help": "node --test video/help",
-    "assemble:help": "node video/help/assemble.mjs 01-type-an-answer && node video/help/assemble.mjs 02-hint-then-study && node video/help/assemble.mjs 03-make-an-assignment"
+    "assemble:help": "node video/help/assemble.mjs 01-type-an-answer && node video/help/assemble.mjs 02-hint-then-study && node video/help/assemble.mjs 03-make-an-assignment && node video/help/assemble.mjs 04-free-body-diagram"
   },
   "keywords": [],
   "author": "",
