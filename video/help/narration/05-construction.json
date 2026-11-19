@@ -1,0 +1,40 @@
+{
+  "clip": "05-construction",
+  "title": "Draw a construction",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "version": 1,
+  "lines": [
+    {
+      "id": "intro",
+      "text": "Here's how to construct with a compass and a straightedge.",
+      "file": "audio/1978478cac9a7c73.wav",
+      "duration_ms": 2813
+    },
+    {
+      "id": "compass",
+      "text": "Pick the compass. Tap the centre, then a point the circle goes through.",
+      "file": "audio/f3c23f9cb35a20ea.wav",
+      "duration_ms": 4133
+    },
+    {
+      "id": "again",
+      "text": "Draw a second circle the same way.",
+      "file": "audio/c1e2fffb79f55518.wav",
+      "duration_ms": 2333
+    },
+    {
+      "id": "straightedge",
+      "text": "Pick the straightedge, and tap two points. Taps snap to points and crossings.",
+      "file": "audio/692a55eddfa12476.wav",
+      "duration_ms": 5153
+    },
+    {
+      "id": "check",
+      "text": "Check your construction. Each step is listed, so you can undo any of them.",
+      "file": "audio/a15a9138bf2db89c.wav",
+      "duration_ms": 6293
+    }
+  ],
+  "total_ms": 20725
+}

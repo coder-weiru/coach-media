@@ -1,0 +1,13 @@
+{
+  "id": "05-construction",
+  "title": "Draw a construction",
+  "voice": "en-US-Chirp3-HD-Achernar",
+  "rate": 0.95,
+  "lines": [
+    { "id": "intro", "text": "Here's how to construct with a compass and a straightedge." },
+    { "id": "compass", "text": "Pick the compass. Tap the centre, then a point the circle goes through." },
+    { "id": "again", "text": "Draw a second circle the same way." },
+    { "id": "straightedge", "text": "Pick the straightedge, and tap two points. Taps snap to points and crossings." },
+    { "id": "check", "text": "Check your construction. Each step is listed, so you can undo any of them." }
+  ]
+}
